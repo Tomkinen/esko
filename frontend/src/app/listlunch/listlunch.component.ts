@@ -14,6 +14,7 @@ export class ListlunchComponent implements OnInit {
   constructor(private ApiconnectionService: ApiconnectionService) {}
   onSelect(restaurant): void {
     this.selectedRestaurant = restaurant;
+    window.scrollTo(0, document.body.scrollHeight);
   }
   saveNew(): void {
     this.ApiconnectionService.doList().then(result => {
@@ -30,6 +31,7 @@ export class ListlunchComponent implements OnInit {
         name: "",
         orderNumber: 0
       };
+      window.scrollTo(0, document.body.scrollHeight);
     });
   }
   getRestaurants(): void {
