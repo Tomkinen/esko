@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ApiconnectionService } from "../apiconnection.service";
+import { ApiconnectionService, Restaurant } from "../apiconnection.service";
 
 @Component({
   selector: "app-listlunch",
@@ -17,8 +17,8 @@ export class ListlunchComponent implements OnInit {
     window.scrollTo(0, document.body.scrollHeight);
   }
   saveNew(): void {
-    this.ApiconnectionService.doList().then(result => {
-      this.restaurants = result;
+    this.ApiconnectionService.doList().subscribe((data: Restaurant[]) => {
+      this.restaurants = data;
       this.maxValueRestaurant = Math.max.apply(
         Math,
         this.restaurants.map(o => {
@@ -35,8 +35,8 @@ export class ListlunchComponent implements OnInit {
     });
   }
   getRestaurants(): void {
-    this.ApiconnectionService.doList().then(result => {
-      this.restaurants = result;
+    this.ApiconnectionService.doList().subscribe((data: Restaurant[]) => {
+      this.restaurants = data;
       let highest = 0;
       let highestRestaurant = {};
       for (let restaurant of this.restaurants) {

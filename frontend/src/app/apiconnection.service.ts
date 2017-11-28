@@ -1,47 +1,39 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs/Observable";
+import "rxjs/add/operator/map";
 
-import "rxjs/add/operator/toPromise";
+export interface Restaurant {
+  id: number;
+  name: string;
+  orderNumber: number;
+  url: string;
+}
+
+export interface CreateRestaurant {
+  create: boolean;
+}
+
+export interface DeleteRestaurant {
+  delete: boolean;
+}
 
 @Injectable()
 export class ApiconnectionService {
   private createUrl = "api/create/";
   private listUrl = "api/list/";
   private deleteUrl = "api/delete/";
-
   constructor(private http: HttpClient) {}
 
-  doList(): Promise<any> {
-    return this.http
-      .get(this.listUrl)
-      .toPromise()
-      .then(response => {
-        return response;
-      })
-      .catch(response => {
-        return response;
-      });
+  doList(): Observable<Restaurant[]> {
+    return this.http.get<Restaurant[]>(this.listUrl);
   }
-  doCreate(lunchData): Promise<any> {
-    return this.http
-      .post(this.createUrl,lunchData)
-      .toPromise()
-      .then(response => {
-        return response;
-      })
-      .catch(response => {
-        return response;
-      });
+
+  doCreate(lunchData): Observable<CreateRestaurant> {
+    return this.http.post<CreateRestaurant>(this.createUrl, lunchData);
   }
-  doDelete(lunchData): Promise<any> {
-    return this.http
-      .post(this.deleteUrl,lunchData)
-      .toPromise()
-      .then(response => {
-        return response;
-      })
-      .catch(response => {
-        return response;
-      });
+
+  doDelete(lunchData): Observable<DeleteRestaurant> {
+    return this.http.post<DeleteRestaurant>(this.deleteUrl, lunchData);
   }
 }
