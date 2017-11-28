@@ -24,6 +24,7 @@ export class LunchdetailsComponent implements OnInit {
   deleteRestaurant(restaurant): void {
     if (confirm("Are you sure to delete " + restaurant.name)) {
       this.ApiconnectionService.doDelete(restaurant).then(result => {
+        this.restaurant = {};
         this.sendRestaurants();
       });
     }
