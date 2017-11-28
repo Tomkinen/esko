@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class SelectedlunchComponent implements OnInit {
 
   constructor() { }
-  @Input() public restaurant: string;
+  @Input() public restaurant;
   ngOnInit() {
   }
 

@@ -8,7 +8,7 @@ import { ApiconnectionService } from "../apiconnection.service";
 })
 export class LunchdetailsComponent implements OnInit {
   constructor(private ApiconnectionService: ApiconnectionService) {}
-  @Input() public restaurant: string;
+  @Input() public restaurant;
   ngOnInit() {}
   saveRestaurant(restaurant): void {
     this.ApiconnectionService.doCreate(restaurant).then(result => {
