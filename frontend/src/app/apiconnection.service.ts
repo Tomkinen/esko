@@ -1,23 +1,22 @@
 import { Injectable } from "@angular/core";
-import { Headers, Http } from "@angular/http";
+import { HttpClient } from "@angular/common/http";
 
 import "rxjs/add/operator/toPromise";
 
 @Injectable()
 export class ApiconnectionService {
-  private headers = new Headers({ "Content-Type": "application/json" });
   private createUrl = "api/create/";
   private listUrl = "api/list/";
   private deleteUrl = "api/delete/";
 
-  constructor(private http: Http) {}
+  constructor(private http: HttpClient) {}
 
   doList(): Promise<any> {
     return this.http
       .get(this.listUrl)
       .toPromise()
       .then(response => {
-        return response.json();
+        return response;
       })
       .catch(response => {
         return response;
@@ -28,7 +27,7 @@ export class ApiconnectionService {
       .post(this.createUrl,lunchData)
       .toPromise()
       .then(response => {
-        return response.json();
+        return response;
       })
       .catch(response => {
         return response;
@@ -39,7 +38,7 @@ export class ApiconnectionService {
       .post(this.deleteUrl,lunchData)
       .toPromise()
       .then(response => {
-        return response.json();
+        return response;
       })
       .catch(response => {
         return response;
