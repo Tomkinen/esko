@@ -10,7 +10,7 @@ Developed this just for fun and self-learning.
 
 You must have Node.js installed. Developed and tested with version 8.9.1 LTS. Clone this repository. Install required modules for nodejs backend. By default the UI can be accessed from port 8080. You can define port with .env-file.
 
-Frontend must be built with angular cli. Go to /frontend -directory and run "ng build" for development environment or "ng build -prod" for production environment. Frontend has also separate README.md for more details.
+Frontend must be built with angular cli. Install angular cli. Go to /frontend -directory and run "npm install" and "ng build" for development environment or "ng build -prod" for production environment. Frontend has also separate README.md for more details.
 
 ## License
 
