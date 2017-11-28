@@ -12,16 +12,12 @@ export class LunchdetailsComponent implements OnInit {
   ngOnInit() {}
   saveRestaurant(restaurant): void {
     this.ApiconnectionService.doCreate(restaurant).then(result => {
-      console.log("Saved to POST api/create");
-      console.log(result);
       window.location.reload();
     });
   }
   deleteRestaurant(restaurant): void {
     if (confirm("Are you sure to delete " + restaurant.name)) {
       this.ApiconnectionService.doDelete(restaurant).then(result => {
-        console.log("Deleted in POST api/delete");
-        console.log(result);
         window.location.reload();
       });
     }

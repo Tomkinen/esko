@@ -14,13 +14,9 @@ export class ListlunchComponent implements OnInit {
   constructor(private ApiconnectionService: ApiconnectionService) {}
   onSelect(restaurant): void {
     this.selectedRestaurant = restaurant;
-    console.log("SELECTED RESTAURANT:");
-    console.log(this.selectedRestaurant);
   }
   saveNew(): void {
     this.ApiconnectionService.doList().then(result => {
-      console.log("DATA FROM NODEJS BACKEND API:");
-      console.log(result);
       this.restaurants = result;
       this.maxValueRestaurant = Math.max.apply(
         Math,
@@ -38,8 +34,6 @@ export class ListlunchComponent implements OnInit {
   }
   getRestaurants(): void {
     this.ApiconnectionService.doList().then(result => {
-      console.log("DATA FROM NODEJS BACKEND API:");
-      console.log(result);
       this.restaurants = result;
       let highest = 0;
       let highestRestaurant = {};
