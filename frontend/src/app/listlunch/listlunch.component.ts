@@ -48,6 +48,9 @@ export class ListlunchComponent implements OnInit {
       this.todaysRestaurant = highestRestaurant;
     });
   }
+  setRestaurants(childRestaurants): void {
+    this.restaurants = childRestaurants;
+  }
   ngOnInit() {
     this.getRestaurants();
   }

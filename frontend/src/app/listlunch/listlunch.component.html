@@ -7,5 +7,5 @@
     <tr *ngFor="let restaurant of restaurants"><td>{{restaurant.name}}</td><td><button (click)="onSelect(restaurant)" class="blueButton">Edit</button></td></tr>
     <tr><td><button (click)="saveNew()" class="greenButton">Add New</button></td></tr>
   </table>
-  <app-lunchdetails [restaurant]="selectedRestaurant"></app-lunchdetails>
+  <app-lunchdetails [restaurant]="selectedRestaurant" (notifyParent)="setRestaurants($event)"></app-lunchdetails>
 </div>
