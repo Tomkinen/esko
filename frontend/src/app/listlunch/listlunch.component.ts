@@ -10,7 +10,7 @@ export class ListlunchComponent implements OnInit, OnDestroy {
   apiListNew:any;
   apiListGet:any;
   restaurants = [];
-  selectedRestaurant = {};
+  selectedRestaurant;
   maxValueRestaurant = 0;
   todaysRestaurant = {};
   constructor(private ApiconnectionService: ApiconnectionService) {}
@@ -31,6 +31,7 @@ export class ListlunchComponent implements OnInit, OnDestroy {
       this.selectedRestaurant = {
         id: this.maxValueRestaurant,
         name: "",
+        url: "",
         orderNumber: 0
       };
       window.scrollTo(0, document.body.scrollHeight);

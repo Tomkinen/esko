@@ -1,8 +1,10 @@
-<div *ngIf="restaurant.id" class="rcorners_darker">
-  <table class="widetable">
-  <tr><td class="label">Name:</td><td><input [(ngModel)]="restaurant.name"></td></tr>
-  <tr><td class="label">Url:</td><td><input [(ngModel)]="restaurant.url"></td></tr>
-  </table>
-  <button (click)="saveRestaurant(restaurant)" class="orangeButton">Save</button>
-  <button (click)="deleteRestaurant(restaurant)" class="redButton">Delete</button>
+<div *ngIf="restaurant !== undefined" class="rcorners_darker">
+  <form [formGroup]="restaurantFormGroup">
+    <table class="widetable">
+    <tr><td class="label">Name:</td><td><input type="text" formControlName="name"></td></tr>
+    <tr><td class="label">Url:</td><td><input type="text" formControlName="url"></td></tr>
+    </table>
+    <button (click)="saveRestaurant(restaurant)" class="orangeButton">Save</button>
+    <button (click)="deleteRestaurant(restaurant)" class="redButton">Delete</button>
+  </form>
 </div>
