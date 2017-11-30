@@ -12,6 +12,10 @@ You must have Node.js installed. Developed and tested with version 8.9.1 LTS. Cl
 
 Frontend must be built with angular cli. Install angular cli. Go to /frontend -directory and run "npm install" and "ng build" for development environment or "ng build -prod" for production environment. Frontend has also separate README.md for more details.
 
+## Usage
+
+After installation, run "npm start".
+
 ## License
 
 MIT license. This source code is completely free. Have fun!
