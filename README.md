@@ -14,7 +14,7 @@ Frontend must be built with angular cli. Install angular cli. Go to /frontend -d
 
 ## Usage
 
-After installation, run "npm start".
+After installation, run "npm start" in repository root directory.
 
 ## License
 
