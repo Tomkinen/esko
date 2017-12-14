@@ -188,3 +188,27 @@ padding-top:40px;}
 table.widetable{width:100%}
 td.label{width:90px;white-space:nowrap;}
 td input{width:90%;margin-bottom:10px;}
+
+/* unvisited link */
+a:link {
+  color: #000000;
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color: #000000;
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  color: #000000;
+  text-decoration: underline;
+}
+
+/* selected link */
+a:active {
+  color: #000000;
+  text-decoration: none;
+}
