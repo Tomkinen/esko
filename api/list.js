@@ -1,9 +1,7 @@
-module.exports = controller;
 function controller(app, store) {
-  app.get("/api/list", listRestaurants);
   function listRestaurants(req, res) {
-    console.log(Date() + "\nGET /api/list");
-    store.list(function(err, objects) {
+    console.log(`${Date()}\nGET /api/list`);
+    store.list((err, objects) => {
       console.log(objects);
       if (err) {
         res.status(500).send({ error: err });
@@ -12,4 +10,6 @@ function controller(app, store) {
       }
     });
   }
+  app.get("/api/list", listRestaurants);
 }
+module.exports = controller;

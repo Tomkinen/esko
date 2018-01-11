@@ -1,10 +1,8 @@
-module.exports = controller;
 function controller(app, store) {
-  app.post("/api/create", createRestaurant);
   function createRestaurant(req, res) {
-    console.log(Date() + "\nPOST /api/create:");
+    console.log(`${Date()}\nPOST /api/create:`);
     console.log(req.body);
-    store.add(req.body, function(err) {
+    store.add(req.body, err => {
       if (err) {
         res.status(500).send({ error: err });
       } else {
@@ -12,4 +10,6 @@ function controller(app, store) {
       }
     });
   }
+  app.post("/api/create", createRestaurant);
 }
+module.exports = controller;
