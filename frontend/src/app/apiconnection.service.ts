@@ -1,6 +1,6 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs/Observable";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
 
 export interface Restaurant {
   id: number;
@@ -19,9 +19,9 @@ export interface DeleteRestaurant {
 
 @Injectable()
 export class ApiconnectionService {
-  private createUrl = "api/create/";
-  private listUrl = "api/list/";
-  private deleteUrl = "api/delete/";
+  private createUrl = 'api/create/';
+  private listUrl = 'api/list/';
+  private deleteUrl = 'api/delete/';
   constructor(private http: HttpClient) {}
 
   doList(): Observable<Restaurant[]> {
